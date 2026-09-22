@@ -241,23 +241,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // ==========================================
-    // 8. HIDE FLOATING WHATSAPP ONLY AT CONTACT/FOOTER SECTION
+    // 8. AUTO-HIDE FLOATING WHATSAPP ON SCROLL (OPTION 1)
     // ==========================================
     const waFloatBtn = document.querySelector('.float-wa');
-    const contactSection = document.querySelector('.site-footer') || document.getElementById('contact');
 
-    if (waFloatBtn && contactSection) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    waFloatBtn.classList.add('hide-float');
-                } else {
-                    waFloatBtn.classList.remove('hide-float');
-                }
-            });
-        }, {
-            threshold: 0.1
+    if (waFloatBtn) {
+        window.addEventListener('scroll', function () {
+            // Page 300px se zyada scroll hone par button smoothly hide ho jayega
+            if (window.scrollY > 300) {
+                waFloatBtn.classList.add('hide-float');
+            } else {
+                waFloatBtn.classList.remove('hide-float');
+            }
         });
-
-        observer.observe(contactSection);
     }
+
+});
