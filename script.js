@@ -161,9 +161,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     `📍 *Location:* ${encodeURIComponent(city)}%0A` +
                     `🛏️ *Approx. Beds:* ${encodeURIComponent(bedCount)}`;
 
-                // Redirect to WhatsApp
+                // Redirect to WhatsApp with NEW NUMBER
                 setTimeout(function () {
-                    window.open(`https://wa.me/9818173544?text=${message}`, '_blank');
+                    window.open(`https://wa.me/919818173644?text=${message}`, '_blank');
 
                     // Reset Form & Button State
                     leadForm.reset();
@@ -240,14 +240,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-  // ==========================================
+    // ==========================================
     // 8. AUTO-HIDE FLOATING WHATSAPP ON SCROLL (OPTION 1)
     // ==========================================
     const waFloatBtn = document.querySelector('.float-wa');
 
     if (waFloatBtn) {
         window.addEventListener('scroll', function () {
-            // Page 300px se zyada scroll hone par button smoothly hide ho jayega
             if (window.scrollY > 300) {
                 waFloatBtn.classList.add('hide-float');
             } else {
