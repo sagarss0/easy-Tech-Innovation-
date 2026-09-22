@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Redirect to WhatsApp
                 setTimeout(function () {
-                    window.open(`https://wa.me/9873205829?text=${message}`, '_blank');
+                    window.open(`https://wa.me/9818173544?text=${message}`, '_blank');
 
                     // Reset Form & Button State
                     leadForm.reset();
