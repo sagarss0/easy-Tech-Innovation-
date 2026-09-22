@@ -130,7 +130,7 @@ ul {
 }
 
 /* ==========================================
-   3. HEADER & NAVIGATION
+   3. HEADER & NAVIGATION (UPDATED FOR MOBILE SCROLL)
    ========================================== */
 .site-header {
     background-color: var(--header-bg);
@@ -658,7 +658,7 @@ body.dark-mode .icon-moon {
 }
 
 /* ==========================================
-   8. FLOATING ACTION BUTTONS (UPDATED)
+   8. FLOATING ACTION BUTTONS
    ========================================== */
 .floating-buttons {
     position: fixed;
@@ -687,7 +687,6 @@ body.dark-mode .icon-moon {
     transform: scale(1.1);
 }
 
-/* Updated Floating WhatsApp styles with smooth hide class */
 .float-wa { 
     background-color: #25d366; 
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
@@ -695,7 +694,6 @@ body.dark-mode .icon-moon {
     visibility: visible;
 }
 
-/* Auto-hide class for JS IntersectionObserver */
 .float-wa.hide-float {
     opacity: 0;
     visibility: hidden;
@@ -752,7 +750,6 @@ body.dark-mode .icon-moon {
     color: var(--text-main);
 }
 
-/* Custom Lab Report Header & Layout */
 .modal-header-custom {
     display: flex;
     justify-content: space-between;
@@ -869,7 +866,6 @@ body.dark-mode .icon-moon {
     border: 1px solid #bbf7d0;
 }
 
-/* NABH Audit Banner Section */
 .nabh-audit-card {
     background: #0f172a;
     color: #ffffff;
@@ -958,7 +954,7 @@ body.dark-mode .icon-moon {
 }
 
 /* ==========================================
-   10. RESPONSIVE BREAKPOINTS
+   10. RESPONSIVE BREAKPOINTS (MOBILE SCROLL FIX)
    ========================================== */
 @media (max-width: 900px) {
     .hero-title {
@@ -967,10 +963,21 @@ body.dark-mode .icon-moon {
 }
 
 @media (max-width: 768px) {
+    /* Header Mobile Scroll Fix */
+    .site-header {
+        position: relative; /* Mobile par page ke saath smoothly scroll hoga */
+        top: auto;
+    }
+
+    .header-stacked-container {
+        padding: 10px 16px 8px 16px;
+        gap: 8px;
+    }
+
     .header-top-row {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 8px;
     }
 
     .centered-logo {
@@ -985,7 +992,8 @@ body.dark-mode .icon-moon {
 
     .centered-nav {
         flex-wrap: wrap;
-        gap: 14px;
+        gap: 12px;
+        padding-top: 8px;
     }
 
     .hero-container {
